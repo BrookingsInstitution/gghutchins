@@ -22,4 +22,9 @@ Imports:
     tidyr,
     glue,
     ggtext,
-    tsibble
+    tsibble,
+    ggthemes,
+    grid,
+    gridExtra,
+    magick,
+    hrbrthemes
