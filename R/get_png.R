@@ -3,7 +3,7 @@ get_png <- function(filename) {
 }
 
 hutchins_logo <- function() {
-  magick::image_read(system.file('logos/hutchins-logo.png',package = 'gghutchins'))
+  magick::image_read(system.file('logos/logo.png',package = 'gghutchins'))
 }
 
 
