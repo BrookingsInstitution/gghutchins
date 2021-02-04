@@ -28,3 +28,7 @@ Imports:
     gridExtra,
     magick,
     hrbrthemes
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
