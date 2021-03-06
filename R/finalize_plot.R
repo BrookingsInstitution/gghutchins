@@ -40,14 +40,6 @@ create_footer <- function (source_name, logo_image_path) {
 
 #' @keywords finalize_plot
 #' @examples
-#' finalize_plot(plot_name = myplot,
-#' source = "The source for my data",
-#' save_filepath = "filename_that_my_plot_should_be_saved_to-nc.png",
-#' width_pixels = 640,
-#' height_pixels = 450,
-#' logo_image_path = "logo_image_filepath.png"
-#' )
-#'
 #' @export
 finalize_plot <- function(plot_name,
                           source_name,

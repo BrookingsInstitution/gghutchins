@@ -27,7 +27,10 @@ Imports:
     grid,
     gridExtra,
     magick,
-    hrbrthemes
+    hrbrthemes,
+    extrafont,
+    ggpubr,
+    png
 Suggests: 
     knitr,
     rmarkdown
