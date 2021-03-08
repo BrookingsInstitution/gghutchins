@@ -16,6 +16,9 @@ scale_fill_hutchins(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 \item{...}{Additional arguments passed to discrete_scale() or
 scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE}
 }
+\value{
+
+}
 \description{
 Fill scale constructor for hutchins colors
 }

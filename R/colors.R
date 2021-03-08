@@ -1,4 +1,15 @@
-
+#' Urban Institute palettes
+#'
+#' Vectors with hex-color codes that correspond to the color palettes outlined in the Urban Institute Data Visualization Style Guide.
+#' \url{http://urbaninstitute.github.io/graphics-styleguide/}
+#'
+#' @source Urban Institute Data Visualization Style Guide
+#'  \url{http://urbaninstitute.github.io/graphics-styleguide/}
+#'
+#'
+#' @family hutchins palettes
+#' @rdname hutchins_palettes
+#' @export
 hutchins_colors <-
   c(`light blue` = '#8AC6FF',
     `dark blue` ='#003A70',
@@ -23,7 +34,8 @@ hutchins_cols <- function(...) {
   hutchins_colors[cols]
 }
 
-
+#' @rdname hutchins_palettes
+#' @export
 hutchins_palettes <- list(
   `main`  = hutchins_cols("dark blue", "light blue", "orange"),
 
@@ -54,12 +66,16 @@ hutchins_pal <- function(palette = "main", reverse = FALSE, ...) {
 
 #' Color scale constructor for hutchins colors
 #'
-#' @param palette Character name of palette in hutchins_palettes
+#' @param palette Character name of hutchins_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
-#' @param ... Additional arguments passed to discrete_scale() or
-#'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
+#' @param ... Additional arguments passed to discrete_scale() or scale_color_gradientn(),
+#'  used respectively when discrete is TRUE or FALSE
 #'
+#' @return
+#' @export
+#'
+#' @examples
 scale_color_hutchins <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- hutchins_pal(palette = palette, reverse = reverse)
 
@@ -78,6 +94,10 @@ scale_color_hutchins <- function(palette = "main", discrete = TRUE, reverse = FA
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
+#' @return
+#' @export
+#'
+#' @examples
 scale_fill_hutchins <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- hutchins_pal(palette = palette, reverse = reverse)
 

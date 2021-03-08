@@ -5,8 +5,14 @@
 
 #Define gppr_theme() function
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 theme_hutchins <- function(){
-  font <- "Franklin Gothic Demi"   #assign font family up front
+  font <- "ITC Franklin Gothic Std Demi"   #assign font family up front
 
   ggthemes::theme_hc() %+replace%    #replace elements we want to change
 
@@ -40,9 +46,9 @@ theme_hutchins <- function(){
         family = font,            #font family
         face = 'bold',
         size = 17),               #font size
-      panel.background = element_rect(
-        fill = '#FAFAFA'
-      ),
+      # panel.background = element_rect(
+      #   fill = '#FAFAFA'
+      # ),
 
 
 
@@ -55,17 +61,17 @@ theme_hutchins <- function(){
       plot.caption.position =  "plot",
 
       axis.title = element_text(             #axis titles
-        family = 'Franklin Gothic Medium',            #font family
+        family = 'ITC Franklin Gothic Std Medium',            #font family
         size = 15),               #font size
 
       axis.text = element_text(              #axis text
-        family = 'Franklin Gothic Book',            #axis famuly
+        family = 'ITC Franklin Gothic Std Book',            #axis famuly
         size = 15),                #font size
 
       plot.margin = unit(c(1, 5, 0.5, 0.5), "lines"),
 
       legend.text = element_text(
-        family = 'Franklin Gothic Book',
+        family = 'ITC Franklin Gothic Std Book',
         size = 15
       ),
       axis.title.x = element_blank(),

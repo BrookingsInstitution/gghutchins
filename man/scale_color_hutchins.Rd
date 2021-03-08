@@ -7,14 +7,17 @@
 scale_color_hutchins(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 }
 \arguments{
-\item{palette}{Character name of palette in hutchins_palettes}
+\item{palette}{Character name of hutchins_palettes}
 
 \item{discrete}{Boolean indicating whether color aesthetic is discrete or not}
 
 \item{reverse}{Boolean indicating whether the palette should be reversed}
 
-\item{...}{Additional arguments passed to discrete_scale() or
-scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
+\item{...}{Additional arguments passed to discrete_scale() or scale_color_gradientn(),
+used respectively when discrete is TRUE or FALSE}
+}
+\value{
+
 }
 \description{
 Color scale constructor for hutchins colors
