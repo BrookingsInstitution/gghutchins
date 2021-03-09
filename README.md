@@ -1,5 +1,6 @@
 # gghutchins <img src="man/figures/hex.png" align="right" height="160"/>
 
-Hutchins format for data visualization
+## Overview
 
-The goal of this package is to make it easier to create graphics with the Hutchins Center logo and color palette. 
+`gghutchins` is a set of tools for creating Hutchins Center themed plots in R.
+
