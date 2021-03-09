@@ -37,7 +37,7 @@ hutchins_cols <- function(...) {
 #' @rdname hutchins_palettes
 #' @export
 hutchins_palettes <- list(
-  `main`  = hutchins_cols("dark blue", "light blue", "orange"),
+  `main`  = hutchins_cols("brookings blue", "light blue", "orange"),
 
   `single` = hutchins_cols('brookings blue'),
 
