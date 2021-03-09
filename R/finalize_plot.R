@@ -76,7 +76,7 @@ finalize_plot <- function(plot_name,
                           width_pixels=50,
                           height_pixels=100,
                           logo_image_path = file.path(system.file("logos", package = 'gghutchins'),
-                                                      "hutchins_logo.png")) {
+                                                      "hutchins.png")) {
 
   footer <- create_footer(source_name, logo_image_path)
 
