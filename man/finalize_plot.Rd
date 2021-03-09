@@ -6,12 +6,12 @@
 \usage{
 finalize_plot(
   plot_name,
-  source_name,
+  source_name = "",
   save_filepath = file.path(Sys.getenv("TMPDIR"), "tmp-nc.png"),
-  width_pixels = 640,
-  height_pixels = 450,
+  width_pixels = 50,
+  height_pixels = 100,
   logo_image_path = file.path(system.file("logos", package = "gghutchins"),
-    "huthins_logo.png")
+    "hutchins_logo.png")
 )
 }
 \arguments{

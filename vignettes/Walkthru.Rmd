@@ -1,0 +1,41 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Examples
+
+```{r setup}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  results = 'asis',
+  tidy.opts=list(width.cutoff=60),
+  tidy=TRUE, 
+  echo = FALSE,
+  dev = "svglite",
+      fig.ext = ".svg"
+)
+```
+
+```{r}
+librarian::shelf('tidyverse', 'gghutchins')
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point() +
+  scale_color_hutchins('cool') +
+  theme_hutchins() +
+  labs(title = 'Here is a plot',
+       subtitle = 'With a subtitle')
+
+```

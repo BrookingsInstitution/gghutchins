@@ -1,5 +1,16 @@
 
 
+#' Title
+#'
+#' @param plot_grid
+#' @param width
+#' @param height
+#' @param save_filepath
+#'
+#' @return
+#' @export
+#'
+#' @examples
 save_plot <- function (plot_grid, width, height, save_filepath) {
   grid::grid.draw(plot_grid)
   #save it
@@ -8,6 +19,15 @@ save_plot <- function (plot_grid, width, height, save_filepath) {
 }
 
 #Left align text
+#' Title
+#'
+#' @param plot_name
+#' @param pieces
+#'
+#' @return
+#' @export
+#'
+#' @examples
 left_align <- function(plot_name, pieces){
   grob <- ggplot2::ggplotGrob(plot_name)
   n <- length(pieces)
@@ -15,6 +35,15 @@ left_align <- function(plot_name, pieces){
   return(grob)
 }
 
+#' Title
+#'
+#' @param source_name
+#' @param logo_image_path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 create_footer <- function (source_name, logo_image_path) {
   #Make the footer
   footer <- grid::grobTree(grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")),
@@ -46,7 +75,8 @@ finalize_plot <- function(plot_name,
                           save_filepath=file.path(Sys.getenv("TMPDIR"), "tmp-nc.png"),
                           width_pixels=50,
                           height_pixels=100,
-                          logo_image_path = file.path(system.file("logos", package = 'gghutchins'),"hutchins_logo.png")) {
+                          logo_image_path = file.path(system.file("logos", package = 'gghutchins'),
+                                                      "hutchins_logo.png")) {
 
   footer <- create_footer(source_name, logo_image_path)
 
