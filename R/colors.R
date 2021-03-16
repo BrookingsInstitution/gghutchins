@@ -11,15 +11,25 @@
 #' @rdname hutchins_palettes
 #' @export
 hutchins_colors <-
-  c(`light blue` = '#8AC6FF',
-    `dark blue` ='#003A70',
-    `brookings blue` = '#053769',
-    'orange' = '#F26D00',
+  c(
+    `brookings blue` = '#003A79',
+    `vivid blue` = "#8AC6FF",
+    `brand blue 50` = "#517EAD",
+    `brand blue 20` = "#A8BDD5",
+    "teal" = "#3EB2C6",
+    `teal 40` = "#3EB2C6",
+    "red" = "#CD1A1C",
+    "light red" = "#F75C57",
+    "green" = "#5CA632",
+    `light blue` = '#A4C7F2',
+ `space gray` = "#D0D3D4",
+    'orange' = '#FF9E1B',
     black = "#101010",
-    gray = "#d2d2d2",
-    `space gray` = "#5c5859",
-    yellow = "#fdbf11",
-    magenta = "#ec008b"
+    gray = "#666666",
+    yellow = "#FFCF1A",
+    `yellow 50` = "#F5CC00",
+    magenta = "#E160A2",
+    purple = "6E2585"
   )
 #' Function to extract hutchins colors as hex codes
 #'
@@ -37,17 +47,22 @@ hutchins_cols <- function(...) {
 #' @rdname hutchins_palettes
 #' @export
 hutchins_palettes <- list(
-  `main`  = hutchins_cols("brookings blue", "light blue", "orange"),
+  `qual` = hutchins_cols('brookings blue', 'vivid blue'),
+  `main`  = hutchins_cols("brookings blue", "vivid blue", "orange"),
+
+  `brand2` = hutchins_cols('brookings blue', 'orange', 'space gray'),
+
+  `alternative` = hutchins_cols('brookings blue', 'teal 40', 'yellow 50'),
 
   `single` = hutchins_cols('brookings blue'),
 
-  `cool`  = hutchins_cols("light blue", "dark blue"),
+  `cool`  = hutchins_cols("brookings blue", "brand blue 50", "brand blue 20",  "space gray"),
 
   `hot`   = hutchins_cols("yellow", "orange", "magenta"),
 
-  `mixed` = hutchins_cols("dark blue", "light blue", "yellow", "orange", "magenta"),
+  `mixed` = hutchins_cols("brookings blue", "vivid blue", "teal", "yellow", "orange", "magenta"),
 
-  `grey`  = hutchins_cols("space gray", "gray")
+  `gray`  = hutchins_cols("space gray", "gray")
 )
 
 #' Return function to interpolate a hutchins color palette

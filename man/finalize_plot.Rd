@@ -11,7 +11,7 @@ finalize_plot(
   width_pixels = 50,
   height_pixels = 100,
   logo_image_path = file.path(system.file("logos", package = "gghutchins"),
-    "hutchins_logo.png")
+    "hutchins.png")
 )
 }
 \arguments{

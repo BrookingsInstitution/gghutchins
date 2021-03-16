@@ -23,19 +23,50 @@ knitr::opts_chunk$set(
   results = 'asis',
   tidy.opts=list(width.cutoff=60),
   tidy=TRUE, 
-  echo = FALSE,
+  echo = TRUE,
   dev = "svglite",
       fig.ext = ".svg"
 )
 ```
 
 ```{r}
-librarian::shelf('tidyverse', 'gghutchins')
+librarian::shelf('tidyverse', 'gghutchins', 'ggtext')
 ggplot(mpg, aes(displ, hwy, colour = class)) + 
   geom_point() +
-  scale_color_hutchins('cool') +
   theme_hutchins() +
+  scale_color_hutchins('alternative') +
   labs(title = 'Here is a plot',
-       subtitle = 'With a subtitle')
+       subtitle = 'With a subtitle',
+       caption = '*Source*: ggplot2')
 
 ```
+```{r}
+# flip x and y axis with coord_flip
+ggplot(mpg, aes(x = class, fill = class)) +
+  geom_bar() +
+  coord_flip() +
+  theme_hutchins() +
+  scale_fill_hutchins('main', rev = T)  +
+  labs(title = "SUV's are popular",
+       subtitle = "Some commentary on SUV's",
+       caption = "Source: ggplot2")
+```
+```{r}
+mtcars %>%
+  mutate(
+    transmission = ifelse(am == 1, "automatic", "manual")
+  ) %>%
+  ggplot(aes(hp, mpg, color = transmission)) +
+  geom_point(size = 2) +
+  labs(
+    x = "Horse power",
+    y = "Miles per gallon (MPG)",
+    title = "Transmission type impacts fuel efficiency",
+    subtitle = "Miles per gallon (MPG) is on average higher for cars
+with automatic transmission",
+caption = "Source: ggplot2"
+  ) +
+  theme_hutchins() +
+  scale_color_hutchins('qual')
+```
+
