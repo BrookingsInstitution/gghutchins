@@ -1,156 +1,176 @@
 
+#Define hutchins_theme() function
 
-
-
-
-
-#Define gppr_theme() function
-
-#' Title
+#' Hutchins Theme
 #'
 #' @return
 #' @export
 #'
 #' @examples
-theme_hutchins <- function() {
-  font <-
-    "Roboto Regular"   #assign font family up front
-  distance <- 0.83 * 12
-  ggthemes::theme_hc() %+replace%    #replace elements we want to change
+theme_hutchins <- function(base_size = 12, base_family = "Roboto") {
 
-    theme(
-      #grid elements
-      panel.grid.major = element_line(size = 0.75,
-                                      linetype = "dotted",
-                                      color = '#cccccc'),
-      #strip major gridlines
-      panel.grid.minor = element_blank(),
-      #strip minor gridlines
-      axis.ticks = element_blank(),
-      #strip axis ticks
-
-      #since theme_minimal() already strips axis lines,
-      #we don't need to do that again
-
-      #text elements
-
-      text = element_text(family = font),
-
-      plot.title = ggtext::element_textbox_simple(
-        #title
-        family = "Roboto Bold",
-        #set font family
-        size = 20,
-        #set font size
-        face = 'bold',
-        color = "#003A79",
-        #bold typeface
-        hjust = 0,
-        #left align
-        lineheight = 1.2
-      ),
-      plot.title.position = 'plot',
-
-
-      plot.subtitle = ggtext::element_textbox_simple(
-        #subtitle
-        family = font,
-        #font family
-        hjust = 0,
-        lineheight = 1,
-        margin = ggplot2::margin(2, 0, 1.5 * distance, 0),
-        size = 15
-      ),
-      #font size
-      # panel.background = element_rect(
-      #   fill = '#FAFAFA'
-      # ),
-
-
-
-      plot.caption = ggtext::element_textbox_simple(
-        #caption
-        family = 'Roboto Light',
-        #font family
-        size = 12,
-        #font size
-        hjust = 0,
-        lineheight = 1,
-        margin = margin(1.5 * distance, 0, 0, 0)
-      ),
-      #right align
+  base_line_size = base_size/24
+  base_rect_size = base_size/24
+  half_line <- base_size / 2L
+  border = FALSE
+  ggplot2::"%+replace%"(
+    ggplot2::theme_classic(base_size = base_size, base_family = base_family) ,
+    ggplot2::theme(
+      # Main attributes
+      line = ggplot2::element_line(colour = "#000000",
+                                   size = base_line_size,
+                                   linetype = 1L,
+                                   lineend = "butt"),
+      rect = ggplot2::element_rect(fill = "#FFFFFF",
+                                   colour = "#000000",
+                                   size = base_rect_size,
+                                   linetype = 1L),
+      text = ggplot2::element_text(family = base_family,
+                                   face = "plain",
+                                   colour = "#000000",
+                                   size = base_size,
+                                   hjust = 0.5,
+                                   vjust = 0.5,
+                                   angle = 0,
+                                   lineheight = 1,
+                                   margin = ggplot2::margin(),
+                                   debug = FALSE),
+      # Plot attributes
+      plot.tag = ggtext::element_textbox_simple(size = base_size * 1.5,
+                                       hjust = 0L,
+                                       vjust = 0L,
+                                       face = "bold",
+                                       margin = ggplot2::margin(b = 10L)),
+      plot.tag.position = "topleft",
+      plot.title = ggtext::element_textbox_simple(size = base_size * 12 / 8.5,
+                                         hjust = 0L,
+                                         vjust = 0L,
+                                         face = "bold",
+                                         margin = ggplot2::margin(b = 10L),
+                                         color = '#003A79'),
+      plot.title.position = "plot",
+      plot.subtitle = ggtext::element_textbox_simple(size = base_size * 9.5 / 8.5,
+                                            hjust = 0L,
+                                            vjust = 0L,
+                                            family = 'Roboto',
+                                            margin = ggplot2::margin(b = 10L)),
+      plot.caption = ggtext::element_textbox_simple(size = base_size * 7 / 8.5,
+                                           hjust = 0L,
+                                           vjust = 0L,
+                                           margin = ggplot2::margin(t = half_line * 0.9),
+                                           family = 'Roboto Light',
+                                           color = '#666666'),
       plot.caption.position = "plot",
+      plot.background = NULL,
 
-      axis.title = element_text(#axis titles
-        family = 'Roboto Medium',            #font family
-        size = 10,
-        margin = margin(distance, distance, 1.5 * distance, 0)),
-      #font size
-
-      axis.text = element_text(#axis text
-        family = font,
-        size = 10),
-
-      axis.line.x = element_line(size = unit(0.5, 'pt'),
-                               color = "#000000"),
-
-      #font size
-
-      plot.margin = unit(c(1, 5, 0.5, 0.5), "lines"),
+      plot.margin = ggplot2::margin(t = half_line,
+                                    r = base_line_size * 24,
+                                    b = half_line,
+                                    l = half_line),
 
 
-      # Legends -------------------------------------------------------------------------------------
+# Axis attributes -----------------------------------------------------------------------------
 
+axis.text = ggplot2::element_text(size = 0.8 * base_size ),
+axis.text.x = ggplot2::element_text(vjust = 1, margin = ggplot2::margin(t = 4L)),
+axis.text.y = ggplot2::element_text(hjust = 1),
+axis.text.x.top = NULL,
+axis.text.y.right = NULL,
+axis.ticks.length.x = NULL,
+axis.ticks.length.x.top = NULL,
+axis.ticks.length.x.bottom = NULL,
+axis.ticks.length.y = NULL,
+axis.ticks.length.y.left = NULL,
+axis.ticks.length.y.right = NULL,
 
+axis.title = ggplot2::element_text(family = 'Roboto Medium',
+                                   size = base_size),
+axis.title.x = ggplot2::element_blank(),
+axis.title.y = ggplot2::element_blank(),
+axis.title.x.top = NULL,
+axis.title.y.right = NULL,
 
-      legend.text = element_text(family = 'Roboto Regular',
-                                 size = 12),
-      legend.position = 'top',
-      legend.direction = "horizontal",
-      legend.justification = NULL,
-      legend.margin = ggplot2::margin(
-        t = 6L,
-        r = 0L,
-        b = 6L,
-        l = 0L,
-        "pt"
-      ),
+axis.ticks = ggplot2::element_line(),
+axis.ticks.length = ggplot2::unit(4L, "pt"),
+axis.ticks.x = ggplot2::element_line(colour = NULL,
+                                     size = NULL,
+                                     linetype = NULL,
+                                     lineend = NULL),
+axis.ticks.y = ggplot2::element_blank(),
 
-      legend.box = "horizontal",
-      legend.box.margin = NULL,
-      legend.box.background = NULL,
-      legend.box.spacing = NULL,
+axis.line = ggplot2::element_line(),
+axis.line.x = ggplot2::element_line(colour = NULL,
+                                    size = NULL,
+                                    linetype = NULL,
+                                    lineend = NULL),
+axis.line.y = ggplot2::element_blank(),
 
-      legend.text.align = 0,
-      legend.background = ggplot2::element_blank(),
-      legend.title = ggplot2::element_blank(),
-      legend.spacing = ggplot2::unit(20L, "pt"),
-      legend.spacing.x = ggplot2::unit(4L, "pt"),
-      legend.spacing.y = NULL,
+# Legend attributes ---------------------------------------------------------------------------
+legend.background = ggplot2::element_blank(),
 
-      legend.key = ggplot2::element_blank(),
-      legend.key.size = ggplot2::unit(10L, "pt"),
-      legend.key.height = NULL,
-      legend.key.width = NULL,
+legend.spacing = ggplot2::unit(20L, "pt"),
+legend.spacing.x = ggplot2::unit(4L, "pt"),
+legend.spacing.y = NULL,
 
+legend.key = ggplot2::element_blank(),
+legend.key.size = ggplot2::unit(10L, "pt"),
+legend.key.height = NULL,
+legend.key.width = NULL,
 
+legend.text = ggtext::element_markdown(size = base_size * 9.5 / 8.5,
+                                    vjust = 0.5,
+                                    family = 'Roboto'),
+legend.text.align = NULL,
+legend.title = ggplot2::element_blank(),
+legend.title.align = NULL,
 
+legend.position = "none",
+legend.direction = "horizontal",
+legend.justification = NULL,
+legend.margin = ggplot2::margin(t = 6L, r = 0L, b = 6L, l = 0L, "pt"),
 
-      # LEGENDS
-      #plot.background = element_rect(fill = "#faf0e6"),
-      #legend.background = element_rect(fill = "#faf0e6", color = "#faf0e6"),
+legend.box = "horizontal",
+legend.box.margin = NULL,
+legend.box.background = NULL,
+legend.box.spacing = NULL,
 
+# Panel attributes ----------------------------------------------------------------------------
 
-      #since the legend often requires manual tweaking
-      #based on plot content, don't define it here_logo
-      #Blank background
-      #This sets the panel background as blank, removing the standard grey ggplot background colour from the plot
-      panel.background = ggplot2::element_blank(),
+panel.background = ggplot2::element_blank(),
+panel.border = ggplot2::element_blank(),
+panel.ontop = FALSE,
 
-      #Strip background (#This sets the panel background for facet-wrapped plots to white, removing the standard grey ggplot background colour and sets the title size of the facet-wrap title to font size 22)
-      strip.background = element_rect(colour = "black", fill = "white"),
+panel.spacing = ggplot2::unit(6L, "pt"),
+panel.spacing.x = NULL,
+panel.spacing.y = NULL,
 
-      strip.text = ggplot2::element_text(size  = 15,  hjust = 0),
-      panel.spacing = unit(1, "lines")
+panel.grid = NULL,
+panel.grid.major = ggplot2::element_line(),
+panel.grid.major.x = ggplot2::element_blank(),
+panel.grid.major.y = ggplot2::element_line(colour = "#cccccc",
+                                           linetype = 'dotted',
+                                           size = base_line_size * 1.5),
+panel.grid.minor = ggplot2::element_line(),
+panel.grid.minor.x = ggplot2::element_blank(),
+panel.grid.minor.y = ggplot2::element_blank(),
+# Strip attributes (faceting) -----------------------------------------------------------------
+strip.background = ggplot2::element_rect(fill = "#dedddd",
+                                         colour = NA,
+                                         size = 10L),
+strip.text = ggplot2::element_text(face = "bold",
+                                   size = base_size * 9.5 / 8.5,
+                                   margin = ggplot2::margin(t = 0L, r = 0L, b = 0L, l = 0L)),
+
+strip.text.x = ggplot2::element_text(margin = ggplot2::margin(t = 4.5, b = 4.5)),
+strip.text.y = ggplot2::element_text(angle = -90L,
+                                     margin = ggplot2::margin(l = 4.5, r = 4.5)),
+
+strip.placement = "inside",
+strip.placement.x =  NULL,
+strip.placement.y =  NULL,
+
+strip.switch.pad.grid = ggplot2::unit(0.1, "cm"),
+strip.switch.pad.wrap = ggplot2::unit(0.1, "cm")
     )
+  )
 }
