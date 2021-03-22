@@ -11,14 +11,13 @@
       extrafont::loadfonts(device = "win")
       windowsFonts()
     }
-    print(extrafont::fonts())
 
   # set os options
   if (.Platform$OS.type == "windows") {
     packageStartupMessage("Setting Windows options...")
     grDevices::windows.options(width = 8.33333333333333,
                                height = 5.55555555555556)
-    grDevices::windowsFonts(Lato = grDevices::windowsFont("Lato"))
+    grDevices::windowsFonts(Roboto = grDevices::windowsFont("Roboto"))
     grDevices::windowsFonts(FontAwesome = grDevices::windowsFont("FontAwesome"))
     windowsFonts()
     extrafont::font_import(pattern = "some-fonts", prompt = FALSE)
@@ -29,7 +28,10 @@
     grDevices::quartz.options(width = 8.33333333333333,
                               height = 5.55555555555556,
                               dpi = 72)
-    dir.create('~/.fonts')
+    if (dir.exists('~/.fonts') == FALSE){
+      dir.create('~/.fonts')
+    }
+
     system('fc-cache -f ~/.fonts')
   }
 

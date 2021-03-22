@@ -14,7 +14,7 @@ theme_hutchins <- function(base_size = 12, base_family = "Roboto") {
   half_line <- base_size / 2L
   border = FALSE
   ggplot2::"%+replace%"(
-    ggplot2::theme_classic(base_size = base_size, base_family = base_family) ,
+    ggplot2::theme_classic(base_size = base_size, base_family = base_family, base_line_size = base_line_size, base_rect_size = base_rect_size) ,
     ggplot2::theme(
       # Main attributes
       line = ggplot2::element_line(colour = "#000000",
@@ -47,16 +47,19 @@ theme_hutchins <- function(base_size = 12, base_family = "Roboto") {
                                          vjust = 0L,
                                          face = "bold",
                                          margin = ggplot2::margin(b = 10L),
+                                         padding = margin(0, 0, 5, 0),
                                          color = '#003A79'),
       plot.title.position = "plot",
       plot.subtitle = ggtext::element_textbox_simple(size = base_size * 9.5 / 8.5,
                                             hjust = 0L,
                                             vjust = 0L,
                                             family = 'Roboto',
+                                            padding = margin(0, 0, 5, 0),
                                             margin = ggplot2::margin(b = 10L)),
       plot.caption = ggtext::element_textbox_simple(size = base_size * 7 / 8.5,
                                            hjust = 0L,
                                            vjust = 0L,
+                                           padding = margin(0, 0, 5, 0),
                                            margin = ggplot2::margin(t = half_line * 0.9),
                                            family = 'Roboto Light',
                                            color = '#666666'),
@@ -106,6 +109,8 @@ axis.line.x = ggplot2::element_line(colour = NULL,
 axis.line.y = ggplot2::element_blank(),
 
 # Legend attributes ---------------------------------------------------------------------------
+
+
 legend.background = ggplot2::element_blank(),
 
 legend.spacing = ggplot2::unit(20L, "pt"),
@@ -117,22 +122,23 @@ legend.key.size = ggplot2::unit(10L, "pt"),
 legend.key.height = NULL,
 legend.key.width = NULL,
 
-legend.text = ggtext::element_markdown(size = base_size * 9.5 / 8.5,
+legend.text = ggtext::element_markdown(size = base_size * 7.5 / 8.5,
                                     vjust = 0.5,
+                                    hjust = 0,
                                     family = 'Roboto'),
-legend.text.align = NULL,
+legend.text.align = 0,
 legend.title = ggplot2::element_blank(),
 legend.title.align = NULL,
 
-legend.position = "none",
+legend.position = "top",
 legend.direction = "horizontal",
-legend.justification = NULL,
+legend.justification = 'left',
 legend.margin = ggplot2::margin(t = 6L, r = 0L, b = 6L, l = 0L, "pt"),
 
 legend.box = "horizontal",
 legend.box.margin = NULL,
 legend.box.background = NULL,
-legend.box.spacing = NULL,
+legend.box.spacing = unit(0.4, "cm"),
 
 # Panel attributes ----------------------------------------------------------------------------
 

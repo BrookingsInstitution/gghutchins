@@ -37,18 +37,15 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
   scale_color_hutchins('alternative') +
   labs(title = 'Here is a plot',
        subtitle = 'With a subtitle',
-       caption = '**Source**: ggplot2') +
-  theme(
-    plot.caption = element_textbox_simple(family = 'Roboto Light', color = 'gray')
-  )
-
+       caption = '**Source**: ggplot2') 
+ 
 ```
 ```{r}
 # flip x and y axis with coord_flip
 ggplot(mpg, aes(x = class, fill = class)) +
   geom_bar() +
   coord_flip() +
-  theme_hc() +
+ 
   scale_fill_hutchins('main', rev = T)  +
   labs(title = "SUV's are popular",
        subtitle = "Some commentary on SUV's",
