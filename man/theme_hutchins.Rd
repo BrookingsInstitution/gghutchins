@@ -2,13 +2,13 @@
 % Please edit documentation in R/theme_hutchins.R
 \name{theme_hutchins}
 \alias{theme_hutchins}
-\title{Title}
+\title{Hutchins Theme}
 \usage{
-theme_hutchins()
+theme_hutchins(base_size = 12, base_family = "Roboto")
 }
 \value{
 
 }
 \description{
-Title
+Hutchins Theme
 }
