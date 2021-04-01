@@ -66,7 +66,7 @@ hutchins_palettes <- list(
 
   `mixed` = hutchins_cols("brookings blue", "vivid blue", "green", "yellow", "orange 60", "magenta"),
 
-  `categorical` = hutchins_cols("brookings blue", "orange 60", "vivid blue", "yellow", "brand_blue_90", "green", "magenta"),
+  `categorical` = hutchins_cols("brookings blue", "orange 60", "vivid blue", "yellow", "space gray", "green", "magenta"),
 
   `gray`  = hutchins_cols("space gray", "gray")
 )
