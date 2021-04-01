@@ -14,6 +14,7 @@ hutchins_colors <-
   c(
     `brookings blue` = '#003A79',
     `vivid blue` = "#8AC6FF",
+     `brand_blue_90` = '#022A4E',
     `brand blue 50` = "#517EAD",
     `brand blue 20` = "#A8BDD5",
     "teal" = "#3EB2C6",
@@ -21,6 +22,7 @@ hutchins_colors <-
      `dark red` = '#A00D11',
     "red" = "#CD1A1C",
     "light red" = "#F75C57",
+    "lighter red" = "#E254E",
     "green" = "#5CA632",
     `light blue` = '#A4C7F2',
  `space gray` = "#D0D3D4",
@@ -63,6 +65,8 @@ hutchins_palettes <- list(
   `hot`   = hutchins_cols("yellow", "orange", "magenta"),
 
   `mixed` = hutchins_cols("brookings blue", "vivid blue", "green", "yellow", "orange 60", "magenta"),
+
+  `categorical` = hutchins_cols("brookings blue", "orange 60", "vivid blue", "yellow", "brand_blue_90", "green", "magenta"),
 
   `gray`  = hutchins_cols("space gray", "gray")
 )
