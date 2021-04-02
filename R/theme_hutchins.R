@@ -64,7 +64,7 @@ theme_hutchins <- function(base_size = 12, base_family = "Roboto") {
                                            family = 'Roboto Light',
                                            color = '#525151'),
       plot.caption.position = "plot",
-      plot.background = NULL,
+      plot.background = "FAFAFA",
 
       plot.margin = ggplot2::margin(t = half_line,
                                     r = base_line_size * 24,
