@@ -12,8 +12,8 @@ roboto_install <- function() {
   if (sum(grepl("[Rr]oboto$", extrafont::fonts())) > 0) {
     "Roboto is already imported and registered."
   } else {
-    extrafont::font_import()
-    extrafont::loadfonts()
+    ## Loading Google fonts (https://fonts.google.com/)
+    showtext::font_add_google('Roboto', 'Roboto')
     roboto_test()
   }
 }
