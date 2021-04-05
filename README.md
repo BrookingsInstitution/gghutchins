@@ -13,7 +13,7 @@ devtools::install_github("Hutchins-Center/gghutchins")
 
 ## Fonts
 
-Brookings uses [Roboto](https://fonts.google.com/specimen/Lato) font for publications. After installing `gghutchins`, try running `gghutchins::roboto_test()` to see if Roboto is imported and registered. 
+Brookings uses [Roboto](https://fonts.google.com/specimen/Roboto) font for publications. After installing `gghutchins`, try running `gghutchins::roboto_test()` to see if Roboto is imported and registered. 
 
 If Roboto isn't imported and registered, install [Roboto](https://fonts.google.com/specimen/Roboto) and then submit `gghutchins::roboto_install()`. If you are on a Windows, you may need to install [ghostscript](https://www.ghostscript.com/download.html) and then submit `Sys.setenv(R_GSCMD = "link to the ghostscript .exe")` before running `gghutchins::roboto_install()`.
 
