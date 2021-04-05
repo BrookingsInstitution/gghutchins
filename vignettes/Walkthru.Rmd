@@ -31,6 +31,7 @@ knitr::opts_chunk$set(
 
 ```{r}
 librarian::shelf('tidyverse', 'gghutchins', 'ggtext')
+gghutchins::set_hutchins_defaults()
 ggplot(mpg, aes(displ, hwy, colour = class)) + 
   geom_point() +
   theme_hutchins() +
@@ -67,6 +68,6 @@ with automatic transmission",
 caption = "Source: ggplot2"
   ) +
   theme_hutchins() +
-  scale_color_hutchins('qual')
+  scale_color_hutchins('qual') 
 ```
 

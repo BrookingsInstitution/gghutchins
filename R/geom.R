@@ -46,7 +46,7 @@ geom_jitter <- function(mapping = NULL, size = 3, ...) {
 #' @param size line size
 #' @param ... other arguments passed to \code{geom_line()}
 #' @export
-geom_line <- function(mapping = NULL, size = 1, ...) {
+geom_line <- function(mapping = NULL, size = 1.3, ...) {
   ggplot2::geom_line(mapping = mapping, size = size, ...)
 }
 

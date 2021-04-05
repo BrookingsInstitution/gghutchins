@@ -1,10 +1,10 @@
 #' Urban Institute palettes
 #'
-#' Vectors with hex-color codes that correspond to the color palettes outlined in the Urban Institute Data Visualization Style Guide.
-#' \url{http://urbaninstitute.github.io/graphics-styleguide/}
+#' Vectors with hex-color codes that correspond to the color palettes outlined in the Brookings Style Guide.
+#' x
 #'
-#' @source Urban Institute Data Visualization Style Guide
-#'  \url{http://urbaninstitute.github.io/graphics-styleguide/}
+#' @source Brookings Style Guide
+#' x
 #'
 #'
 #' @family hutchins palettes
